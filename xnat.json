@@ -4,7 +4,7 @@
     "parameters": {
         "xnatCIName": {
             "type": "string",
-            "defaultValue": "xnatci",
+            "defaultValue": "[concat('XNAT-ci', uniqueString(resourceGroup().id))]",
             "minLength": 2,
             "metadata": {
                 "description": "XNAT container instance name"
@@ -12,7 +12,7 @@
         },
         "postgresServerName": {
             "type": "string",
-            "defaultValue": "xnatpostgres",
+            "defaultValue": "[concat('xnatpostgres', uniqueString(resourceGroup().id))]",
             "minLength": 3,
             "metadata": {
                 "description": "XNAT postgres server name"
@@ -81,7 +81,7 @@
 
         "storageAccountName": {
             "type": "string",
-            "defaultValue": "xnatsa",
+            "defaultValue": "[concat('xnatsa', uniqueString(resourceGroup().id))]",
             "metadata": {
                 "description": "XNAT storage account name"
             }
